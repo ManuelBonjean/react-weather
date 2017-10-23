@@ -1,0 +1,55 @@
+.CardSideA {
+  background: #48c3d9;
+  color: #FFF;
+  width: 100%;
+  height: 100%;
+  padding: 10px; }
+  .CardSideA span.title {
+    display: block;
+    font-size: 14px; }
+  .CardSideA > .Weather-Location {
+    float: left;
+    font-size: 24px;
+    margin-left: 10px; }
+  .CardSideA > .Weather-Temperature {
+    float: right;
+    font-size: 36px;
+    margin-right: 10px;
+    font-weight: bold; }
+  .CardSideA > .Weather-Icon {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center; }
+    .CardSideA > .Weather-Icon i {
+      font-size: 100px;
+      display: block;
+      clear: both; }
+  .CardSideA > .Weather-Wind {
+    float: left;
+    margin-top: 30px;
+    font-size: 14px; }
+  .CardSideA > .Weather-Humidity {
+    float: right;
+    margin-top: 30px;
+    font-size: 14px; }
+  .CardSideA > .Weather-Weeks {
+    float: left;
+    height: 35px;
+    margin: 10px -10px; }
+    .CardSideA > .Weather-Weeks ul {
+      height: 100%;
+      margin: 0;
+      padding: 0; }
+      .CardSideA > .Weather-Weeks ul li {
+        display: inline-block;
+        background: #1799b0;
+        width: 35px;
+        height: 100%;
+        margin-right: 1.5px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 13px; }
+        .CardSideA > .Weather-Weeks ul li:last-child {
+          margin-right: 0; }
