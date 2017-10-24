@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import './Location.css';
+import LocationIcon from './location.png';
+
 class WeatherLocation extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +12,10 @@ class WeatherLocation extends Component {
   }
 
   render() {
-    return <div className="Weather-Location">{this.state.city}</div>;
+    return (<div className="Weather-Location">
+      <img src={LocationIcon} width="11" height="20" alt="Location" />
+      <span>{this.state.city}</span>
+    </div>);
   }
 }
 

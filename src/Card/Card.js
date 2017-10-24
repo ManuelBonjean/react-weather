@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import Loader from "../Loader/Loader";
 import CardSideA from "./SideA/CardSideA";
 import CardSideB from "./SideB/CardSideB";
 import "./Card.css";
@@ -11,7 +12,8 @@ class Card extends Component {
 
     this.state = {
       position: null,
-      weather: null
+      weather: null,
+      sideActive: 'A'
     };
   }
 
@@ -45,26 +47,38 @@ class Card extends Component {
 
   loadCardA () {
     if (this.state.weather) {
-      return <CardSideA data={this.state.weather} />;
+      return <CardSideA data={this.state.weather} onChangeSide={this.changeSide} />;
     }
   }
   loadCardB () {
     if (this.state.position) {
-      return <CardSideB data={this.state.position} />;
+      return <CardSideB data={this.state.position} onChangeSide={this.changeSide}/>;
     }
   }
 
   showLoading () {
     if (!this.state.position || !this.state.weather) {
-      return <span>Caricamento</span>;
+      return <Loader />;
     }
+  }
+
+  changeSide = () => {
+    console.log('Change Side');
+    let sideActive = 'A';
+    if (this.state.sideActive === 'A') {
+      sideActive = 'B';
+    }
+    this.setState({
+      sideActive
+    });
   }
 
 
 
   render() {
+    console.log('Render');
     return (
-      <div className="Card">
+      <div className={'Card ' + (this.state.sideActive === 'B'?'changeSide':'')}>
         {this.showLoading()}
         {this.loadCardA()}
         {this.loadCardB()}

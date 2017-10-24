@@ -22,13 +22,15 @@ class WeatherWeeks extends Component {
   
 
   render() {
-    let d = new Date();
-    let n = d.getDay();
+    let date = new Date();
+    let dayOfWeek = date.getDay();
+
+    console.log('Day: ', dayOfWeek);
 
     return (<div className="Weather-Weeks">
       <ul>
-      {this.weeks.map(i => {
-        return <li key={i}>{i}</li>;
+      {this.weeks.map((val, i) => {
+        return <li className={i === (dayOfWeek-1)?'active':''} key={i}>{val}</li>;
       })}
       </ul>
     </div>);

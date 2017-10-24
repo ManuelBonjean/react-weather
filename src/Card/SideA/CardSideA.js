@@ -13,18 +13,29 @@ class CardSideA extends Component {
   constructor(props) {
     super(props);
 
-    this.state = props.data;
-    console.log('CardSideA: ', this.state);
+    this.state = {
+      data: props.data,
+    };
+    this.onChangeSide = props.onChangeSide;
   }
+
+  componentWillReceiveProps (nextProps) {
+    this.setState({
+      data: nextProps.data,
+    });
+  }
+
   render() {
     return (
       <div className="CardSideA">
-        <WeatherLocation data={this.state.location} />
-        <WeatherTemperature data={this.state.item.condition.temp} units={this.state.units} />
-        <WeatherIcon data={this.state.item.condition} />
-        <WeatherWind data={this.state.wind} units={this.state.units} />
-        <WeatherHumidity data={this.state.atmosphere.humidity} />
-        <WeatherWeeks data="" />
+        <div className="Weather-Location-Container" onClick={this.onChangeSide}>
+          <WeatherLocation data={this.state.data.location} />
+        </div>
+        <WeatherTemperature data={this.state.data.item.condition.temp} units={this.state.data.units} />
+        <WeatherIcon data={this.state.data.item.condition} />
+        <WeatherWind data={this.state.data.wind} units={this.state.data.units} />
+        <WeatherHumidity data={this.state.data.atmosphere.humidity} />
+        <WeatherWeeks />
       </div>
     );
   }

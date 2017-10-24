@@ -15,7 +15,7 @@ class WeatherWind extends Component {
     let speed = (+this.state.speed)*0.621371;
     speed = speed.toFixed(2);
     return (<div className="Weather-Wind">
-      <span className="title">Wind</span>
+      <span className="title">WIND</span>
       <span>{speed} MPH</span>
     </div>);
   }

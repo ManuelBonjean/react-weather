@@ -1,0 +1,7 @@
+.Weather-Location {
+  height: 20px; }
+  .Weather-Location span {
+    float: left; }
+  .Weather-Location img {
+    float: left;
+    margin-right: 7px; }
